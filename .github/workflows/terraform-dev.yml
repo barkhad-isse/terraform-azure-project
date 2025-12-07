@@ -1,0 +1,35 @@
+name: Terraform - Dev (CI only)
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  terraform-dev:
+    runs-on: ubuntu-latest
+
+    env:
+      TF_IN_AUTOMATION: "true"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.9.0
+
+      - name: Terraform Init (no backend)
+        run: terraform init -backend=false
+
+      - name: Terraform Fmt Check
+        run: terraform fmt -check
+
+      - name: Terraform Validate
+        run: terraform validate
