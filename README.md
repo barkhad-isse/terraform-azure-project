@@ -21,7 +21,7 @@
 
 ## Architecture Overview
 
-<img width="1024" height="1536" alt="architec" src="https://github.com/user-attachments/assets/60602737-0dde-4dbf-9a75-35f745a9e3b1" />
+<img width="500" height="600" alt="architec" src="https://github.com/user-attachments/assets/60602737-0dde-4dbf-9a75-35f745a9e3b1" />
 
 ## Features
 ### Infrastructure
